@@ -1,7 +1,10 @@
-# ---------------------------------------------------------------------------------------------------------------------
-# Dictionary (Maps, Hash Tables, Associate Arrays)
-# Duplicate keys are allowed, but only the last value will be considered
-# ---------------------------------------------------------------------------------------------------------------------
+"""
+-----------------------------------------------------------------------------------------------------------------------
+Dictionary (Maps, Hash Tables, Associate Arrays)
+Duplicate keys are allowed, but only the last value will be considered
+-----------------------------------------------------------------------------------------------------------------------
+"""
+
 customer = {
     "name": "Sourav",
     "age": 30,
@@ -94,12 +97,30 @@ print(book_dict['tom']['address']['zip'])
 
 
 # ---------------------------------------------------------------------------------------------------------------------
-# Merge Two Dictionaries:
+# Merge Dictionaries:
 # ---------------------------------------------------------------------------------------------------------------------
-x = {1: 10, 2: 20, 3: 30}
-y = {1: 10, 2: 40, 5: 50, 6: 60}
-z = {**x, **y}
-print(z)                                    # {1: 10, 2: 40, 3: 30, 5: 50, 6: 60}
+x_dict = {'a': 10, 'b': 20, 'c': 30}
+y_dict = {'m': 70, 'n': 80, 'o': 90}
+z_dict = {'x': 40, 'y': 50, 'z': 60}
+print('x_dict:', x_dict)
+print('y_dict:', y_dict)
+print('z_dict:', z_dict)
+
+# Merge using update():
+x_dict.update(y_dict)
+x_dict.update(z_dict)
+print('x_dict:', x_dict)
+
+# Merge by unpacking (using **):
+x_dict = {'a': 10, 'b': 20, 'c': 30}
+y_dict = {'m': 70, 'n': 80, 'o': 90}
+z_dict = {'x': 40, 'y': 50, 'z': 60}
+merged_dict = {**x_dict, **y_dict, **z_dict}
+print('merged_dict:', merged_dict)
+
+# Merge using Union (|) operator: (Python 3.9 and above)
+merged_dict = x_dict | y_dict | z_dict
+print('merged_dict:', merged_dict)
 
 
 # ---------------------------------------------------------------------------------------------------------------------
